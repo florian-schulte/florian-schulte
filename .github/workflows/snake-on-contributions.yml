@@ -20,9 +20,10 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
 
-     # show the status of the build. Makes it easier for debugging (if there's any issues).
-      - name: For-Debug
-        run: git status
+     ## show the status of the build. Makes it easier for debugging (if there's any issues).
+     ## NOT doing this .. since it is not a repository .. since we did no CHECKOUT
+     # - name: For-Debug
+     #   run: git status
 
       - name: Publish
         uses: crazy-max/ghaction-github-pages@v3.1.0
