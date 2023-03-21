@@ -9,7 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       #- uses: actions/checkout@v3
-      - uses: Platane/snk/svg-only@v2
+      - name: Kick-Off
+        run: echo "go go go"
+      - name: Snake-SVG
+        uses: Platane/snk/svg-only@v2
         id: snake-svg
         with:
           github_user_name: ${{ github.repository_owner }}
@@ -18,9 +21,11 @@ jobs:
             dist/github-snake-dark.svg?palette=github-dark
 
      # show the status of the build. Makes it easier for debugging (if there's any issues).
-      - run: git status
+      - name: For-Debug
+        run: git status
 
-      - uses: crazy-max/ghaction-github-pages@v3.1.0
+      - name: Publish
+        uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           # using output branch avoids cluttering main
           target_branch: output
