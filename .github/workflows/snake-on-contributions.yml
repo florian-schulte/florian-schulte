@@ -7,7 +7,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
+    steps:                
+      - name: status
+        run: git status
+        
       - name: Snake-SVG
         uses: Platane/snk/svg-only@v2
         id: snake-svg
@@ -16,10 +19,7 @@ jobs:
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
-            
-      - name: for debugging
-        run: git status
-        
+
       - name: Publish
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
