@@ -8,9 +8,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      #- uses: actions/checkout@v3
-      - name: Kick-Off
-        run: echo "go go go"
       - name: Snake-SVG
         uses: Platane/snk/svg-only@v2
         id: snake-svg
@@ -19,12 +16,10 @@ jobs:
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
-
-     ## show the status of the build. Makes it easier for debugging (if there's any issues).
-     ## NOT doing this .. since it is not a repository .. since we did no CHECKOUT
-     # - name: For-Debug
-     #   run: git status
-
+            
+      - name: for debugging
+        run: git status
+        
       - name: Publish
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
