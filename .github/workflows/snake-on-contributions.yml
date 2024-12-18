@@ -1,7 +1,8 @@
 name: Generate Snake
 on:
-  schedule:
-    - cron: "42 */6 * * *"
+  #20241218 -- disabling the workflow
+  #schedule:
+  #  - cron: "42 */6 * * *"
   workflow_dispatch:
 
 jobs:
